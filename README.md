@@ -20,8 +20,20 @@ This generation delivers comprehensive upgrades across the board: superior text 
 
 Available in Dense and MoE architectures that scale from edge to cloud, with Instruct and reasoning‑enhanced Thinking editions for flexible, on‑demand deployment.
 
+隆重推出 Qwen3-VL —— 迄今为止通义千问（Qwen）系列中**最强大的视觉语言模型**。
 
-#### Key Enhancements:
+本代模型实现了全方位的全面升级：
+
+- 更卓越的文本理解与生成能力，
+- 更深入的视觉感知与推理能力，
+- 更长的上下文长度支持，
+- 更强的空间关系与视频动态理解能力，
+- 以及更出色的智能体交互能力。
+
+提供 **Dense（稠密）** 与 **MoE（混合专家）** 两种架构，可灵活适配从**端侧到云端**的各类部署场景；同时提供 **Instruct（指令微调版）** 与 **增强推理能力的 Thinking（思维增强版）**，满足多样化、按需部署的需求。
+
+
+### Key Enhancements:
 
 * **Visual Agent**: Operates PC/mobile GUIs—recognizes elements, understands functions, invokes tools, completes tasks.
 
@@ -39,8 +51,19 @@ Available in Dense and MoE architectures that scale from edge to cloud, with Ins
 
 * **Text Understanding on par with pure LLMs**: Seamless text–vision fusion for lossless, unified comprehension.
 
+### 核心增强：
 
-#### Model Architecture Updates:
+- **视觉智能体（Visual Agent）**：可操作 PC/移动设备 GUI——识别界面元素、理解功能、调用工具、完成任务。
+- **视觉编码增强（Visual Coding Boost）**：可从图像/视频直接生成 Draw.io、HTML、CSS 和 JavaScript 代码。
+- **高级空间感知（Advanced Spatial Perception）**：可判断物体位置、视角与遮挡关系；提供更强的 2D 定位能力，并支持 3D 定位，赋能空间推理与具身智能（embodied AI）。
+- **长上下文与视频理解（Long Context & Video Understanding）**：原生支持 256K 上下文，可扩展至 1M；可完整处理整本书籍及数小时长视频，具备全文记忆与秒级索引能力。
+- **增强的多模态推理（Enhanced Multimodal Reasoning）**：在 STEM/数学领域表现卓越——支持因果分析，提供逻辑严谨、基于证据的回答。
+- **升级的视觉识别（Upgraded Visual Recognition）**：通过更广泛、更高质量的预训练，实现“万物识别”——涵盖名人、动漫角色、商品、地标、动植物等。
+- **扩展的 OCR 能力（Expanded OCR）**：支持语言从 10 种扩展至 32 种；在低光照、模糊、倾斜等复杂条件下表现稳健；对生僻字、古文字及专业术语识别更佳；长文档结构解析能力显著提升。
+- **文本理解能力媲美纯语言模型（Text Understanding on par with pure LLMs）**：实现文本与视觉的无缝融合，达成无损、统一的理解。
+
+
+### Model Architecture Updates:
 
 <p align="center">
     <img src="https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_arc.jpg" width="80%"/>
@@ -53,7 +76,11 @@ Available in Dense and MoE architectures that scale from edge to cloud, with Ins
 
 3. **Text–Timestamp Alignment:** Moves beyond T‑RoPE to precise, timestamp‑grounded event localization for stronger video temporal modeling.
 
+### 模型架构更新：
 
+1. **交错式 MRoPE（Interleaved-MRoPE）**：通过鲁棒的位置编码，在时间、宽度和高度维度上实现全频段分配，增强长时程视频推理能力。
+2. **DeepStack**：融合多层级 ViT 特征，以捕捉细粒度细节，强化图像与文本的对齐效果。
+3. **文本–时间戳对齐（Text–Timestamp Alignment）**：超越 T‑RoPE，实现精确的、基于时间戳的事件定位，提升视频时序建模能力。
 
 
 
@@ -123,6 +150,27 @@ We are preparing [cookbooks](https://github.com/QwenLM/Qwen3-VL/tree/main/cookbo
 | [MultiModal Coding](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/mmcode.ipynb) | Generate accurate code based on rigorous comprehension of multimodal information. | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/mmcode.ipynb) |
 | [Long Document Understanding](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/long_document_understanding.ipynb) | Achieve rigorous semantic comprehension of ultra-long documents. | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/long_document_understanding.ipynb) |
 | [Spatial Understanding](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/spatial_understanding.ipynb) | See, understand and reason about the spatial information | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/spatial_understanding.ipynb) |
+
+## 使用示例
+
+我们正在为多种能力准备[使用示例 ](https://github.com/QwenLM/Qwen3-VL/tree/main/cookbooks)，包括识别、定位、文档解析、视频理解、关键信息提取等。欢迎深入了解！
+
+| Cookbook                                                     | Description                                                  | Open                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [全场景识别（Omni Recognition）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/omni_recognition.ipynb) | 不仅能识别动物、植物、人物和风景名胜，还能识别汽车、商品等各种物体。 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/omni_recognition.ipynb) |
+| [强大的文档解析能力（Powerful Document Parsing Capabilities）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/document_parsing.ipynb) | 文档解析能力达到更高水平，不仅包含文本内容，还包含版面位置信息以及我们的 Qwen HTML 格式。 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/document_parsing.ipynb) |
+| [跨格式的精准目标定位（Precise Object Grounding Across Formats）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/2d_grounding.ipynb) | 采用相对位置坐标，同时支持边界框（boxes）和关键点（points），可灵活组合多种定位与标注任务。 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/2d_grounding.ipynb) |
+| [通用 OCR 与关键信息抽取（General OCR and Key Information Extraction）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb) | 在自然场景和多语言环境下具备更强的文本识别能力，支持多样化的关键信息抽取需求。 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb) |
+| [视频理解（Video Understanding）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/video_understanding.ipynb) | 提供更优的视频 OCR、长视频理解以及视频定位能力。             | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/video_understanding.ipynb) |
+| [手机智能体（Mobile Agent）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/mobile_agent.ipynb) | 为手机控制任务提供定位与推理能力。                           | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/mobile_agent.ipynb) |
+| [计算机操作智能体（Computer-Use Agent）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/computer_use.ipynb) | 为计算机及网页控制任务提供定位与推理能力。                   | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/computer_use.ipynb) |
+| [3D 定位（3D Grounding）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/3d_grounding.ipynb) | 为室内外物体提供精确的 3D 边界框。                           | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/3d_grounding.ipynb) |
+| [结合图像进行推理（Thinking with Images）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/think_with_images.ipynb) | 利用`image_zoom_in_tool`和`search_tool`，帮助模型精准理解图像中的细粒度视觉细节。 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/think_with_images.ipynb) |
+| [多模态编程（MultiModal Coding）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/mmcode.ipynb) | 基于对多模态信息的严谨理解，生成准确的代码。                 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/mmcode.ipynb) |
+| [长文档理解（Long Document Understanding）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/long_document_understanding.ipynb) | 实现对超长文档的严谨语义理解。                               | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/long_document_understanding.ipynb) |
+| [空间理解（Spatial Understanding）](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/spatial_understanding.ipynb) | 能够观察、理解并推理空间信息。                               | [![Colab](https://colab.research.google.com/assets/colab-badge.svg?x-oss-process=image/resize,m_mfit,w_320,h_320)](https://colab.research.google.com/github/QwenLM/Qwen3-VL/blob/main/cookbooks/spatial_understanding.ipynb) |
+
+
 
 ## Quickstart
 
@@ -334,15 +382,23 @@ print(output_text)
 
 <details>
 <summary>Pixel Control via Official Processor</summary>
-
 Using the official HF processor, we can conveniently control the budget of visual tokens. Since the Qwen3-VL processor separates image and video processing, we can independently configure the pixel budget for each modality.
+
+使用官方的 Hugging Face 处理器，我们可以方便地控制视觉 token 的数量预算。由于 Qwen3-VL 的处理器将图像和视频处理分开，因此可以分别为每种模态独立配置像素预算。
+
 - **For the image processor**:  
   The parameter `size['longest_edge']` originally corresponds to `max_pixels`, which defines the maximum number of pixels allowed for an image (i.e., for an image of height H and width W, H × W must not exceed `max_pixels`; image channels are ignored for simplicity).  
   Similarly, `size['shortest_edge']` corresponds to `min_pixels`, specifying the minimum allowable pixel count for an image.
 
+  参数 `size['longest_edge']` 原本对应于 `max_pixels`，用于定义图像允许的最大像素数量（即对于高度为 H、宽度为 W 的图像，H × W 不得超过 `max_pixels`；为简化起见，图像通道数被忽略）。
+  类似地，`size['shortest_edge']` 对应于 `min_pixels`，用于指定图像允许的最小像素数量。
+  
 - **For the video processor**:  
   The interpretation differs slightly. `size['longest_edge']` represents the maximum total number of pixels across all frames in a video — for a video of shape T×H×W, the product T×H×W must not exceed `size['longest_edge']`.  
   Similarly, `size['shortest_edge']` sets the minimum total pixel budget for the video.
+  
+  解释略有不同。`size['longest_edge']` 表示视频中所有帧的像素总数上限——对于形状为 T×H×W 的视频，其像素总数 T×H×W 不得超过 `size['longest_edge']`。
+  类似地，`size['shortest_edge']` 设定了视频的最小像素总数预算。
 
 ```python
 processor = AutoProcessor.from_pretrained("Qwen/Qwen3-VL-235B-A22B-Instruct")
@@ -609,6 +665,10 @@ We recommend setting appropriate values for the `min_pixels` and `max_pixels` pa
 
 Alternatively, you can use the `total_pixels` parameter to limit the total number of tokens in the video (it is recommended to set this value below 24576 * 32 * 32 to avoid excessively long input sequences). For more details on parameter usage and processing logic, please refer to the `fetch_video` function in `qwen_vl_utils/vision_process.py`.
 
+我们建议根据可用的 GPU 内存和具体应用场景，为 `min_pixels` 和 `max_pixels` 参数设置合适的值，以限制视频中单帧的分辨率。
+
+或者，您也可以使用 `total_pixels` 参数来限制视频的总 token 数量（建议将该值设置在 24576 * 32 * 32 以下，以避免输入序列过长）。关于参数使用和处理逻辑的更多细节，请参见 `qwen_vl_utils/vision_process.py` 文件中的 `fetch_video` 函数。
+
 ```python
 from transformers import AutoModelForImageTextToText, AutoProcessor
 from qwen_vl_utils import process_vision_info
@@ -674,6 +734,13 @@ Currently, `qwen-vl-utils` supports three video decoding backends: `torchvision`
 
 Video URL compatibility is primarily determined by the version of the third-party library being used. For more details, refer to the table below. If you prefer not to use the default backend, you can switch it by setting `FORCE_QWENVL_VIDEO_READER` to `torchvision`, `decord`, or `torchcodec`.
 
+目前，`qwen-vl-utils` 支持三种视频解码后端：`torchvision`、`decord` 和 `torchcodec`。虽然 `decord` 和 `torchcodec` 的解码速度通常显著快于 `torchvision`，但我们推荐使用 `torchcodec`。这是因为 `decord` 存在一些已知问题（例如解码时卡死），且其项目已不再积极维护。
+
+- 对于 `decord`，如果您未使用 Linux 系统，可能无法通过 PyPI 安装 `decord`。在这种情况下，执行 `pip install qwen-vl-utils` 将自动回退到使用 `torchvision` 进行视频处理。不过，您仍可[从源码安装 decord ](https://github.com/dmlc/decord?tab=readme-ov-file#install-from-source)，以便在加载视频时启用 `decord`。
+- 若要使用 `torchcodec` 作为视频解码后端，请遵循官方 [torchcodec 仓库 ](https://github.com/pytorch/torchcodec/tree/main?tab=readme-ov-file#installing-torchcodec)中提供的安装说明手动安装。请注意，`torchcodec` 依赖 FFmpeg 来实现解码功能。
+
+视频 URL 的兼容性主要取决于所使用的第三方库版本。更多详情请参见下表。如果您希望不使用默认后端，可通过设置环境变量 `FORCE_QWENVL_VIDEO_READER` 为 `torchvision`、`decord` 或 `torchcodec` 来切换解码后端。
+
 | Backend     | HTTP | HTTPS |
 |-------------|------|-------|
 | torchvision >= 0.19.0 | ✅  | ✅   |
@@ -688,6 +755,9 @@ Video URL compatibility is primarily determined by the version of the third-part
 
 #### Add ids for Multiple Visual Inputs
 By default, images and video content are directly included in the conversation. When handling multiple images, it's helpful to add labels to the images and videos for better reference. Users can control this behavior with the following settings:
+
+默认情况下，图像和视频内容会直接包含在对话中。在处理多张图像时，为图像和视频添加标签有助于更好地引用。用户可以通过以下设置来控制此行为：
+
 <details>
 <summary>Add vision ids</summary>
 
@@ -744,9 +814,16 @@ First, make sure to install the latest version of Flash Attention 2:
 pip install -U flash-attn --no-build-isolation
 ```
 
+其中，`--no-build-isolation` 参数的作用是**让 pip 在构建软件包时直接使用当前环境中的已安装依赖，而非创建一个隔离的临时构建环境**，常用于需要特定系统或 GPU 依赖（如 PyTorch、CUDA）的包（如 flash-attn）以避免编译失败。
+
 Also, you should have a hardware that is compatible with Flash-Attention 2. Read more about it in the official documentation of the [flash attention repository](https://github.com/Dao-AILab/flash-attention). FlashAttention-2 can only be used when a model is loaded in `torch.float16` or `torch.bfloat16`.
 
 To load and run a model using Flash Attention-2, simply add `attn_implementation="flash_attention_2"` when loading the model as follows:
+
+此外，您还需具备与 FlashAttention-2 兼容的硬件。更多详情请参阅 [FlashAttention 官方仓库文档](https://github.com/Dao-AILab/flash-attention)。
+FlashAttention-2 仅在模型以 `torch.float16` 或 `torch.bfloat16` 数据类型加载时才能使用。
+
+要使用 FlashAttention-2 加载并运行模型，只需在加载模型时添加 `attn_implementation="flash_attention_2"`，如下所示：
 
 ```python
 import torch
@@ -765,6 +842,11 @@ The current `config.json` is set for context length up to 256K tokens.
 To handle extensive inputs exceeding 256K tokens, we utilize [YaRN](https://arxiv.org/abs/2309.00071), a technique for enhancing model length extrapolation, ensuring optimal performance on lengthy texts.
 
 For supported frameworks (currently transformers and vLLM), you could modify `max_position_embeddings` and `rope_scaling` in `config.json` to enable YaRN:
+
+当前的 `config.json` 配置支持最长 256K 个 token 的上下文长度。
+为处理超过 256K token 的超长输入，我们采用 [YaRN](https://arxiv.org/abs/2309.00071) 技术来增强模型的长度外推能力，从而确保在长文本上仍能保持优异性能。
+
+对于已支持的框架（目前包括 transformers 和 vLLM），您可以通过修改 `config.json` 中的 `max_position_embeddings` 和 `rope_scaling` 来启用 YaRN：
 
 ```
 {
@@ -792,10 +874,15 @@ vllm serve Qwen/Qwen3-VL-235B-A22B-Instruct --rope-scaling '{"rope_type":"yarn",
 ```
 
 > Because Interleaved-MRoPE’s position IDs grow more slowly than vanilla RoPE, use a **smaller scaling factor**. For example, to support 1M context with 256K context length, set factor=2 or 3 — not 4.
+>
+> 由于 Interleaved-MRoPE 的位置编码 ID 增长速度比标准 RoPE 更慢，因此应使用**更小的缩放因子**。例如，若要支持 1M 上下文长度（以 256K 为基准上下文长度），应将 factor 设为 2 或 3，而非 4。
 
 ### Try Qwen3-VL-235B-A22 with API!
 
 To explore Qwen3-VL-235B-A22, a more fascinating multimodal model, we encourage you to test our cutting-edge API service. Let's start the exciting journey right now!
+
+要体验 Qwen3-VL-235B-A22 这一更加引人入胜的多模态模型，我们诚邀您试用我们前沿的 API 服务。现在就开启这段精彩的探索之旅吧！
+
 ```python
 from openai import OpenAI
 
@@ -809,10 +896,12 @@ client = OpenAI(
 
 completion = client.chat.completions.create(
     model="qwen3-vl-235b-a22b-instruct",
-    messages=[{"role": "user", "content": [
-        {"type": "image_url",
-         "image_url": {"url": "https://dashscope.oss-cn-beijing.aliyuncs.com/images/dog_and_girl.jpeg"}},
-        {"type": "text", "text": "这是什么"},
+    messages=[
+        {"role": "user", 
+         "content": [
+        	{"type": "image_url",
+         	"image_url": {"url": "https://dashscope.oss-cn-beijing.aliyuncs.com/images/dog_and_girl.jpeg"}},
+        	{"type": "text", "text": "这是什么"},
     ]}]
 )
 print(completion.model_dump_json())
@@ -827,6 +916,10 @@ In this section, we provide instructions for users to build a web-based user int
 
 Install the required dependencies by running the following command:
 
+在本节中，我们将为用户提供构建基于网页的用户界面（UI）演示的说明。该 UI 演示允许用户通过 Web 浏览器与预定义的模型或应用进行交互。请按照以下步骤开始操作。
+
+通过运行以下命令安装所需的依赖项：
+
 ```bash
 pip install -r requirements_web_demo.txt
 ```
@@ -838,7 +931,7 @@ Launch a browser-based UI to interact with the model:
 python web_demo_mm.py -c /your/path/to/qwen3vl/weight
 ```
 
-After running the command, you’ll see a link generated in the terminal similar to this:
+After running the command, you'll see a link generated in the terminal similar to this:
 
 ```
 Running on local: http://127.0.0.1:7860/
@@ -858,6 +951,10 @@ We recommend using vLLM for fast Qwen3-VL deployment and inference. You need to 
 
 Please check [vLLM official documentation](https://docs.vllm.ai/en/latest/serving/multimodal_inputs.html) for more details about online serving and offline inference for multimodal models.
 
+我们推荐使用 vLLM 快速部署和推理 Qwen3-VL。您需要安装 `vllm>=0.11.0` 以启用对 Qwen3-VL 的支持。您也可以使用我们的[官方 Docker 镜像](https://chat.qwen.ai/c/8d67d9ae-61a5-446a-a867-66ba652d0054#-docker)。
+
+有关多模态模型的在线服务和离线推理的更多详情，请参阅 [vLLM 官方文档](https://docs.vllm.ai/en/latest/serving/multimodal_inputs.html)。
+
 ### Installation
 ```bash
 pip install accelerate
@@ -870,6 +967,10 @@ uv pip install -U vllm
 You can start either a vLLM or SGLang server to serve LLMs efficiently, and then access it using an OpenAI-style API.
 
 The following launch command is applicable to H100/H200; for more efficient deployment or deployment on other GPUs, please refer to the [vLLM community guide](https://docs.vllm.ai/projects/recipes/en/latest/Qwen/Qwen3-VL.html).
+
+您可以启动 vLLM 或 SGLang 服务器以高效地部署大语言模型（LLM），然后通过 OpenAI 风格的 API 进行访问。
+
+以下启动命令适用于 H100/H200；如需更高效的部署方式或在其他 GPU 上部署，请参阅 [vLLM 社区指南](https://docs.vllm.ai/projects/recipes/en/latest/Qwen/Qwen3-VL.html)。
 
 * vLLM server
 ```shell
@@ -993,6 +1094,7 @@ from vllm import LLM, SamplingParams
 import os
 os.environ['VLLM_WORKER_MULTIPROC_METHOD'] = 'spawn'
 
+
 def prepare_inputs_for_vllm(messages, processor):
     text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     # qwen_vl_utils 0.0.14+ reqired
@@ -1048,7 +1150,7 @@ if __name__ == '__main__':
     checkpoint_path = "Qwen/Qwen3-VL-235B-A22B-Instruct-FP8"
     processor = AutoProcessor.from_pretrained(checkpoint_path)
     inputs = [prepare_inputs_for_vllm(message, processor) for message in [messages]]
-
+    
     llm = LLM(
         model=checkpoint_path,
         mm_encoder_tp_mode="data",
@@ -1069,7 +1171,7 @@ if __name__ == '__main__':
         print('=' * 40)
         print(f"Inputs[{i}]: {input_['prompt']=!r}")
     print('\n' + '>' * 40)
-
+    
     outputs = llm.generate(inputs, sampling_params=sampling_params)
     for i, output in enumerate(outputs):
         generated_text = output.outputs[0].text
@@ -1138,7 +1240,18 @@ To facilitate faithful reproduction of our reported results, we summarize our of
 - Notes:
   - For a few benchmarks, we slightly modified the evaluation prompts; detailed changes will be documented in the upcoming technical report.
   - A small number of benchmarks are internally constructed; we plan to release the code and reproduction assets afterwards.
+## 评估复现
+
+为便于准确复现我们报告的结果，我们在下方汇总了官方评估配置。
+
+- 推理运行时：[vLLM](https://github.com/vllm-project/vllm)
+- 评估框架：[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)、[lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)
+- 说明：
+  - 针对少数基准测试，我们对评估提示词（prompts）进行了小幅修改；具体变更将在即将发布的技术报告中详细说明。
+  - 少量基准测试为内部构建；我们计划后续公开相关代码与复现资源。
+
 ### Generation Hyperparameters
+
 #### Instruct models
 ```bash
 export greedy='false'
@@ -1167,6 +1280,8 @@ export out_seq_length=40960
 
 To simplify the deploy process, we provide docker images with pre-build environments: [qwenllm/qwenvl](https://hub.docker.com/r/qwenllm/qwenvl). You only need to install the driver and download model files to launch demos.
 
+为简化部署流程，我们提供了预配置环境的 Docker 镜像：[qwenllm/qwenvl](https://hub.docker.com/r/qwenllm/qwenvl)。您只需安装驱动并下载模型文件，即可启动演示。
+
 ```bash
 docker run --gpus all --ipc=host --network=host --rm --name qwen3vl -it qwenllm/qwenvl:qwen3vl-cu128 bash
 ```
@@ -1174,8 +1289,6 @@ docker run --gpus all --ipc=host --network=host --rm --name qwen3vl -it qwenllm/
 ## Citation
 
 If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil: :)
-
-
 
 
 ```BibTeX
