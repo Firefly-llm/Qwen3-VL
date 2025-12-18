@@ -19,7 +19,7 @@ def validate_data(json_file_path, media_folder_path):
     base_path = os.path.splitext(json_file_path)[0]
     valid_file_path = f"{base_path}_valid.json"
     problem_file_path = f"{base_path}_problems.json"
-    
+
     # Load the dataset
     try:
         data = load_dataset("json", data_files=json_file_path)["train"]
@@ -44,7 +44,7 @@ def validate_data(json_file_path, media_folder_path):
     }
     
     print(f"Processing {len(data)} entries...")
-    
+
     for item in tqdm(data):
         stats['total_entries'] += 1
         problems = []
@@ -65,7 +65,7 @@ def validate_data(json_file_path, media_folder_path):
         # Count media types for stats
         media_counts = {k: len(v) for k, v in media_info.items()}
         active_media = [k for k, v in media_counts.items() if v > 0]
-        
+
         if len(active_media) > 1:
             stats['media_types']['mixed'] += 1
         elif len(active_media) == 1:
@@ -100,7 +100,7 @@ def validate_data(json_file_path, media_folder_path):
             'video': 0
         }
         gpt_has_media_token = False
-        
+
         for conv in conversations:
             if conv.get("from") == "human":
                 actual_counts['image'] += conv.get("value", "").count("<image>")

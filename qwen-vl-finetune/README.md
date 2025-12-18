@@ -21,7 +21,9 @@ The `qwenvl` directory contains the following components:
 
 ### `tools`
 - `process_bbox.ipynb`: Convert bbox into QwenVL format. If you have grounding data, please refer this file to tranform your data.
-- `pack_data.py`: Pack data into even length buckets.
+- `pack_data.py`: Pack data into even length buckets. 将数据打包到长度为偶数的桶中。
+
+
 
 ## Requirements
 
@@ -211,7 +213,7 @@ configs = data_list(dataset_names)
 - The training data should strictly follow this format:  
   - One `<image>` tag in the question must correspond to exactly one image file  
   - Similarly, `<video>` tags must correspond to video files  
-  - These special tokens should not appear in the answer text  
+  - These special tokens should not appear in the answer text
 - For open source data that might have missing images or other issues, you can verify data completeness using `tools/check_image.py`.  
 
 
@@ -288,7 +290,7 @@ torchrun --nproc_per_node=$NPROC_PER_NODE \
          --num_train_epochs 3 \              # Total training epochs
          --warmup_ratio 0.03 \               # LR warmup proportion
          --lr_scheduler_type "cosine" \      # Learning rate schedule
-         --weight_decay 0.01 \               # L2 regularization strength
+         --weight_decay 0.01 \               # L2 regularization strength L2 正则项强度
          
          # Logging & Checkpoints
          --logging_steps 10 \               # Log metrics interval
@@ -315,4 +317,8 @@ The script accepts arguments in three categories:
    - Training with Qwen2.5-VL-32B model, you should have 8 80G GPU refering to `scripts/sft_32b.sh`
    - `"_attn_implementation": "flash_attention_2",` could be add in the config.json of the model to use flash attention.
    - The Qwen3VL MoE model does not support DeepSpeed with ZeRO-3. Additionally, Hugging Face’s official implementation does not include support for load balancing loss currently.
+
+```
+Qwen3VL 的 MoE 模型不支持在 DeepSpeed 的 ZeRO-3 模式下运行。此外，Hugging Face 官方实现目前尚未支持负载均衡损失（load balancing loss
+```
 
