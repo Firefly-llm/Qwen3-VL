@@ -77,6 +77,7 @@ python run_mmmu.py infer \
 **Examples:**
 
 *   **Standard Inference:**
+    
     ```bash
     python run_mmmu.py infer \
         --model-path /path/to/Qwen2.5-VL-chat \
@@ -84,7 +85,7 @@ python run_mmmu.py infer \
         --dataset MMMU_DEV_VAL \
         --output-file results/mmmu_dev_val_predictions.jsonl
     ```
-
+    
 *   **Inference with Chain-of-Thought:**
     ```bash
     python run_mmmu.py infer \
