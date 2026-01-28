@@ -9,6 +9,7 @@ import mimetypes
 
 
 def LMUDataRoot():
+    # os.path.expanduser 用于将路径中的 ~ 或 ~user 展开为对应用户的主目录路径
     if 'LMUData' in os.environ and osp.exists(os.environ['LMUData']):
         return os.environ['LMUData']
     home = osp.expanduser('~')
@@ -31,7 +32,7 @@ def get_gpu_memory():
     except Exception as e:
         print(f'{type(e)}: {str(e)}')
         return []
-    
+
 def auto_split_flag():
     flag = os.environ.get('AUTO_SPLIT', '0')
     if flag == '1':
@@ -46,7 +47,7 @@ def auto_split_flag():
             return False
     except:
         return False
-    
+
 def listinstr(lst, s):
     assert isinstance(lst, list)
     for item in lst:
@@ -70,6 +71,7 @@ def decode_base64_to_image(base64_string, target_size=-1):
     if image.mode in ('RGBA', 'P'):
         image = image.convert('RGB')
     if target_size > 0:
+        # thumbnail 方法用于将图像缩放到指定大小，保持原始比例
         image.thumbnail((target_size, target_size))
     return image
 
